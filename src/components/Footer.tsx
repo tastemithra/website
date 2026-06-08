@@ -366,12 +366,12 @@ export const Footer: React.FC = () => {
           }
 
           .footer-brand-col {
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;
+            text-align: left;
           }
 
           .footer-social-links {
-            justify-content: center;
+            justify-content: flex-start;
           }
 
           .footer-bottom {

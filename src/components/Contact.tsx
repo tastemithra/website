@@ -209,16 +209,15 @@ export const Contact: React.FC = () => {
                     <optgroup label="Rice & Grain Flours">
                       <option value="Rice Powder">Rice Powder</option>
                       <option value="Roasted Rice Powder">Roasted Rice Powder</option>
-                      <option value="Steamed Rice Powder">Steamed Rice Powder</option>
                       <option value="Wheat Powder">Wheat Powder</option>
                       <option value="Ragi Powder">Ragi Powder</option>
                       <option value="Roasted Rava">Roasted Rava</option>
                     </optgroup>
                     <optgroup label="Puttu Powders">
-                      <option value="Steamed Rice Puttu Powder">Steamed Rice Puttu Powder</option>
+                      <option value="Steamed Puttu Powder">Steamed Puttu Powder</option>
                       <option value="Steamed Wheat Puttu Powder">Steamed Wheat Puttu Powder</option>
-                      <option value="Steam-Made Ragi Puttu Powder">Steam-Made Ragi Puttu Powder</option>
-                      <option value="Steamed Cholam Puttu Powder">Steamed Cholam (Corn) Puttu Powder</option>
+                      <option value="Ragi Puttu">Ragi Puttu</option>
+                      <option value="Corn Puttu">Corn Puttu</option>
                     </optgroup>
                     <optgroup label="Spice Powders">
                       <option value="Chilli Powder">Chilli Powder</option>
@@ -230,7 +229,7 @@ export const Contact: React.FC = () => {
                     <optgroup label="Masalas & Seasonings">
                       <option value="Sambar Powder">Sambar Powder</option>
                       <option value="Chicken Masala">Chicken Masala</option>
-                      <option value="Garam Masala">Garam Masala</option>
+                      <option value="Garam Masala Powder">Garam Masala Powder</option>
                       <option value="Chutney Powder">Chutney Powder</option>
                       <option value="Achar Podi">Achar Podi</option>
                     </optgroup>
@@ -832,7 +831,7 @@ export const Contact: React.FC = () => {
             font-size: 0.8rem;
           }
         }
-        @media (max-width: 392px) {
+        @media (max-width: 350px) {
           .contact-section {
             padding: 36px 0;
             overflow-x: hidden;

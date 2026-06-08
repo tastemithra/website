@@ -23,16 +23,6 @@
   font-style: normal;
   font-display: block;
 }
-
-@font-face {
-  font-family: 'Mochi Boom';
-  src: url('/fonts/Mochi%20Boom.ttf') format('truetype'),
-    url('/fonts/Mochi%20Boom.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
 /* Premium Signature Theme for Taste Mithra */
 
 :root {
@@ -822,8 +812,8 @@ button.modal-close:hover {
   }
 }
 
-/* Ultra-small screen (< 392px) – tighten everything further */
-@media (max-width: 392px) {
+/* Ultra-small screen (< 395px) – tighten everything further */
+@media (max-width: 350px) {
   html {
     font-size: 85% !important;
   }

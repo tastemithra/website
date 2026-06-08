@@ -34,6 +34,7 @@ export const Logo: React.FC<LogoProps> = ({
           fill
           sizes={`${width}px`}
           style={{ objectFit: 'contain' }}
+          priority
         />
       </div>
 

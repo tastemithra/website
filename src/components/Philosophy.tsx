@@ -21,9 +21,7 @@ export const Philosophy: React.FC = () => {
             </h2>
             
             <p className="quote-body">
-              {"At Taste Mithra, we believe your family's health is sacred. This is why we strictly"} 
-              {"adhere to a simple standard: we will never package, sell, or source any food ingredient"} 
-              {"that we wouldn't proudly serve to our own children at our own dining table."} 
+              At Taste Mithra, we believe your family&apos;s health is sacred. This is why we strictly adhere to a simple standard: we will never package, sell, or source any food ingredient that we wouldn&apos;t proudly serve to our own children at our own dining table.
             </p>
 
             <p className="quote-subbody">
