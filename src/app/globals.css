@@ -1,0 +1,1039 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+@font-face {
+  font-family: 'Biscuit Glitch';
+  src: url('/fonts/Biscuit%20Glitch.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Biscuit Glitch Regular';
+  src: url('/fonts/Biscuit%20Glitch.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'The Last Shuriken';
+  src: url('/fonts/The%20Last%20Shuriken.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Mochi Boom';
+  src: url('/fonts/Mochi%20Boom.ttf') format('truetype'),
+    url('/fonts/Mochi%20Boom.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Premium Signature Theme for Taste Mithra */
+
+:root {
+  --bg-dark: #FFDF00;
+  --bg-elevated: #FFF9E8;
+  --bg-card: #FFFFFF;
+  --bg-card-strong: #FFFFFF;
+  --bg-panel-dark: #065F46;
+  --bg-panel-dark-soft: rgba(6, 95, 70, 0.88);
+
+  --primary-raw: 14, 139, 90;
+  --primary: #0E8B5A;
+  --primary-soft: #16A36A;
+  --primary-deep: #065F46;
+  --primary-glow: rgba(14, 139, 90, 0.22);
+
+  --accent-red: #E53935;
+  --accent-red-soft: rgba(229, 57, 53, 0.12);
+  --accent-olive: #FF7A00;
+  --accent-maroon: #800000;
+
+  --text-light: #222222;
+  --text-muted: #4A4A4A;
+  --text-subtle: #666666;
+  --text-dark: #FFF9E8;
+
+  --font-heading: "Mochi Boom", "Fredoka", "Iowan Old Style", serif;
+  --font-body: "Mochi Boom", "Fredoka", "Aptos", sans-serif;
+
+  --border-glass: rgba(234, 220, 168, 0.4);
+  --border-strong: rgba(234, 220, 168, 0.8);
+  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.05);
+  --shadow-neon: 0 22px 60px rgba(14, 139, 90, 0.15);
+  --shadow-red: 0 16px 40px rgba(229, 57, 53, 0.16);
+  --shadow-deep: 0 28px 80px rgba(14, 139, 90, 0.12);
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 110%;
+  /* increases base root scaling by 10% */
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 0.35;
+  z-index: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(var(--primary-raw), 0.42);
+  color: var(--text-light);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f2de00;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(var(--primary-raw), 0.14);
+  }
+
+  50% {
+    box-shadow: 0 0 32px rgba(var(--primary-raw), 0.3);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatSlow {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.text-gradient-neon {
+  color: var(--primary-deep);
+}
+
+.text-gradient-red {
+  color: var(--accent-red);
+}
+
+.glass-panel {
+  background: var(--bg-card-strong);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-neon);
+}
+
+.glow-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: 1px solid rgba(var(--primary-raw), 0.4);
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: #151309;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 30px rgba(var(--primary-raw), 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(var(--primary-raw), 0.28);
+  filter: saturate(1.05);
+}
+
+.glow-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: 1px solid rgba(58, 51, 19, 0.14);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.46);
+  color: var(--text-light);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 10px 24px rgba(69, 58, 11, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(var(--primary-raw), 0.32);
+}
+
+.glow-btn-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--accent-red);
+  color: var(--text-dark);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-red);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-btn-red:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.9s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: 0.1s;
+  will-change: opacity, transform;
+  transform: translateZ(0);
+}
+
+.float-element {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.main-content-flow {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 20;
+}
+
+section {
+  position: relative;
+  scroll-margin-top: 84px;
+}
+
+@media (max-width: 900px) {
+  section {
+    scroll-margin-top: 72px;
+  }
+}
+
+/* --- USER SPECIAL OVERRIDES: Balanced Professional Green & Yellow Palette --- */
+
+/* 1. Main Backgrounds (Warm Yellow #FFDF00) */
+html,
+body {
+  background-color: #FFDF00 !important;
+  background: #FFDF00 !important;
+}
+
+/* 2. Alternating Section Backgrounds (Yellow, White, Cream) */
+.why-us-section,
+.why-choose-us {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+.products-section {
+  background-color: #FFDF00 !important;
+  background: #FFDF00 !important;
+}
+
+.philosophy-section {
+  background-color: #FFF9E8 !important;
+  background: #FFF9E8 !important;
+}
+
+.anniversary-section {
+  background-color: #FFDF00 !important;
+  background: #FFDF00 !important;
+}
+
+.contact-section {
+  background-color: #FFDF00 !important;
+  background: #FFDF00 !important;
+}
+
+/* Bold Neobrutalism Organic Cards & Panels */
+.glass-panel,
+.showcase-glass-card,
+.metric-item,
+.pillar-card,
+.reason-card,
+.product-card,
+.modal-content,
+.info-card,
+.form-container,
+.map-container,
+.milestone-card,
+.tab-item,
+.highlight-tab,
+.form-wrapper {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border: 2.5px solid var(--primary) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: 0 8px 0px rgba(14, 139, 90, 0.12) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Card Hover States - Bounce lift & shadow shift */
+.reason-card:hover,
+.product-card:hover,
+.pillar-card:hover,
+.info-card:hover,
+.form-wrapper:hover,
+.showcase-glass-card:hover,
+.metric-item:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 14px 0px rgba(14, 139, 90, 0.22) !important;
+  border-color: var(--primary-soft) !important;
+}
+
+/* 3. Hero Section Background (User's Pedestal & Product Banner) */
+.hero-section {
+  background-color: #FFF9E8 !important;
+  background-image: url('/images/hero_bg.png') !important;
+  background-size: cover !important;
+  background-position: center right !important;
+  background-repeat: no-repeat !important;
+  position: relative !important;
+}
+
+@media (min-width: 901px) {
+  .hero-section {
+    background-size: cover !important;
+    background-position: center right !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    background-image: url('/images/bg.png') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+}
+
+/* Secondary background elements using White #ffffff */
+.metric-item,
+.pillar-card,
+.reason-card,
+.product-card,
+.glass-panel,
+.showcase-glass-card,
+.info-card,
+.tab-item {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+/* Accent Badges using Primary Green #0E8B5A */
+.badge-1,
+.badge-2,
+.decorative-badge,
+.glass-indicator,
+.indicator-dot,
+.product-badge {
+  background-color: #0E8B5A !important;
+  background: #0E8B5A !important;
+  color: #ffffff !important;
+  border-color: #16A36A !important;
+}
+
+/* Scroll parchment card badge — warm brown, NOT green */
+.scroll-card .card-badge {
+  background: rgba(92, 64, 30, 0.12) !important;
+  background-color: rgba(92, 64, 30, 0.12) !important;
+  color: #4a2c11 !important;
+  border-color: rgba(92, 64, 30, 0.35) !important;
+}
+
+body::before {
+  background: transparent !important;
+}
+
+/* 4. Main Headings in Deep Green (#0E8B5A) */
+h1:not(.hero-title),
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.quote-headline,
+.reason-title,
+.product-name,
+.modal-title,
+.milestone-title,
+.info-title,
+.footer-col-title,
+.badge-title,
+.text-gradient-neon,
+.text-gradient-red {
+  color: #0E8B5A !important;
+  background: none !important;
+  -webkit-text-fill-color: #0E8B5A !important;
+}
+
+/* Scroll parchment cards — override heading/text to warm brown */
+.scroll-card .reason-title {
+  color: #3a1f04 !important;
+  -webkit-text-fill-color: #3a1f04 !important;
+  background: none !important;
+}
+
+.scroll-card .reason-subtitle {
+  color: #7a4f22 !important;
+  -webkit-text-fill-color: #7a4f22 !important;
+}
+
+.scroll-card .reason-desc,
+.scroll-card p {
+  color: #4d3015 !important;
+}
+
+p {
+  text-align: justify;
+}
+
+/* 5. Sub writings / paragraph texts / descriptions in readable Charcoal Black (#222222) */
+p,
+li,
+label,
+input,
+textarea,
+select,
+.hero-description,
+.metric-label,
+.metric-number,
+.reason-description,
+.product-description,
+.footer-desc,
+.info-text,
+.map-details,
+.pillar-card p,
+.reason-card p,
+.product-card p,
+.copyright,
+.contact-detail,
+.form-header p {
+  color: #222222 !important;
+  font-size: 1.12rem !important;
+}
+
+/* Maintain proper inherited typography sizing for inline elements */
+span:not(.text-gradient-neon):not(.text-gradient-red):not(.brand-title):not(.brand-subtitle):not(.footer-brand-title):not(.footer-brand-subtitle):not(.icon),
+strong,
+a:not(.glow-btn-primary):not(.glow-btn-secondary):not(.glow-btn-red):not(.checkout-submit-btn):not(.pill-nav-btn) {
+  color: #222222 !important;
+}
+
+/* Accent highlight links/hover state in Deep Green #0E8B5A */
+.nav-link:hover,
+a:not(.checkout-submit-btn):not(.pill-nav-btn):hover {
+  color: #0E8B5A !important;
+}
+
+/* 6. Buttons in Tomato Red (#E53935) with Black Text (#000000) */
+.glow-btn-primary,
+.glow-btn-secondary,
+.glow-btn-red,
+.navbar-cta-btn,
+button:not(.mobile-toggle-btn):not(.modal-close):not(.qty-btn),
+input[type="submit"],
+.glow-btn-primary svg,
+.glow-btn-secondary svg,
+.glow-btn-red svg {
+  background-color: #E53935 !important;
+  background: #E53935 !important;
+  color: #000000 !important;
+  border-color: #E53935 !important;
+  box-shadow: 0 12px 30px rgba(229, 57, 53, 0.22) !important;
+  stroke: #000000 !important;
+  fill: none !important;
+}
+
+/* Button Hover State - Orange (#FF7A00) */
+.glow-btn-primary:hover,
+.glow-btn-secondary:hover,
+.glow-btn-red:hover,
+.navbar-cta-btn:hover,
+button:not(.mobile-toggle-btn):not(.modal-close):not(.qty-btn):hover,
+input[type="submit"]:hover {
+  background-color: #FF7A00 !important;
+  background: #FF7A00 !important;
+  border-color: #FF7A00 !important;
+  box-shadow: 0 18px 36px rgba(255, 122, 0, 0.38) !important;
+  color: #000000 !important;
+  stroke: #000000 !important;
+}
+
+/* 7. Navbar Theme (Green #0E8B5A + White text) */
+.navbar {
+  background-color: #0E8B5A !important;
+  background: #0E8B5A !important;
+}
+
+.navbar-scrolled {
+  background: rgba(14, 139, 90, 0.95) !important;
+  border-bottom: 1px solid rgba(234, 220, 168, 0.3) !important;
+}
+
+.navbar .nav-link,
+.navbar-links .nav-link,
+.navbar .brand-title {
+  color: #ffffff !important;
+}
+
+.navbar .brand-subtitle {
+  color: #FFDF00 !important;
+}
+
+.navbar .nav-link:hover,
+.navbar-links .nav-link:hover {
+  color: #FFDF00 !important;
+  /* Yellow highlight on hover */
+}
+
+/* 8. Footer Theme (Dark Green #065F46 + Yellow highlights) */
+.footer-section {
+  background-color: #065F46 !important;
+  background: #065F46 !important;
+  border-top: 1px solid rgba(234, 220, 168, 0.15) !important;
+}
+
+.footer-col-title,
+.footer-brand-title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.footer-brand-desc,
+.footer-links-list a,
+.footer-contact-list .text,
+.copyright-text,
+.design-credits {
+  color: #FFF9E8 !important;
+  /* Cream White text */
+}
+
+.tagline-malayalam,
+.text-neon-yellow,
+.footer-brand-subtitle,
+.footer-links-list a:hover,
+.hover-neon:hover {
+  color: #FFDF00 !important;
+  /* Yellow Highlights */
+  text-shadow: 0 0 5px rgba(247, 198, 0, 0.3) !important;
+}
+
+.footer-col-title::after {
+  background-color: #FFDF00 !important;
+}
+
+/* Taste Mithra branding text uses Biscuit Glitch */
+.brand-title,
+.footer-brand-title,
+.signature-name {
+  font-family: 'Biscuit Glitch', 'Biscuit Glitch Regular', sans-serif !important;
+}
+
+/* Decrease the text size in navbar back to its elegant, small dimensions */
+.navbar .nav-link,
+.navbar-links .nav-link {
+  font-size: 0.76rem !important;
+  letter-spacing: 0.14em !important;
+}
+
+.navbar .brand-title {
+  font-size: 2.2rem !important;
+}
+
+@media (max-width: 1220px) {
+  .navbar .brand-title {
+    font-size: 1.6rem !important;
+  }
+
+  .navbar .brand-subtitle {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.12em !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar .brand-title {
+    font-size: 1.8rem !important;
+  }
+
+  .navbar .brand-subtitle {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.15em !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar .brand-title {
+    font-size: 1.4rem !important;
+  }
+
+  .navbar .brand-subtitle {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.1em !important;
+  }
+}
+
+.navbar .navbar-cta-btn {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.14em !important;
+  padding: 8px 14px !important;
+}
+
+.mobile-menu-drawer .drawer-link {
+  font-size: 1.35rem !important;
+}
+
+/* Fix mobile toggle button styles so they don't get ruined by the global button overrides */
+.mobile-toggle-btn,
+button.mobile-toggle-btn {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: none !important;
+  border-radius: 999px !important;
+  width: 44px !important;
+  height: 44px !important;
+}
+
+.mobile-toggle-btn:hover,
+button.mobile-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: none !important;
+}
+
+/* Make sure the hamburger lines are visible (in white) inside the button */
+.mobile-toggle-btn .hamburger-line {
+  background-color: #ffffff !important;
+}
+
+/* Custom Close Button for Modal */
+.modal-close,
+button.modal-close {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #0E8B5A !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+}
+
+.modal-close:hover,
+button.modal-close:hover {
+  color: #16A36A !important;
+  background: transparent !important;
+}
+
+/* Mobile Menu / Drawer styling */
+.mobile-menu-drawer {
+  background: rgba(14, 139, 90, 0.98) !important;
+}
+
+.mobile-menu-drawer .drawer-link {
+  color: #ffffff !important;
+}
+
+.mobile-menu-drawer .drawer-link:hover {
+  color: #FFDF00 !important;
+}
+
+/* --- MOBILE RESPONSIVE TYPOGRAPHY & LAYOUT OPTIMIZATIONS --- */
+@media (max-width: 600px) {
+  html {
+    font-size: 100% !important;
+    /* Scale down the root size for small devices */
+  }
+
+  p,
+  li,
+  label,
+  input,
+  textarea,
+  select,
+  .hero-description,
+  .metric-label,
+  .reason-description,
+  .product-description,
+  .footer-desc,
+  .info-text,
+  .map-details,
+  .pillar-card p,
+  .reason-card p,
+  .product-card p,
+  .copyright,
+  .contact-detail,
+  .form-header p {
+    font-size: 0.98rem !important;
+    /* Adjust body text scaling for smaller viewports */
+  }
+
+  h1,
+  .hero-title {
+    font-size: 2.1rem !important;
+    line-height: 1.25 !important;
+  }
+
+  h2,
+  .section-title,
+  .quote-headline {
+    font-size: 1.85rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h3,
+  .product-name,
+  .info-title {
+    font-size: 1.35rem !important;
+  }
+
+  .container {
+    padding: 0 12px !important;
+    /* Slightly smaller margins on very small screens */
+  }
+
+  .glow-btn-primary,
+  .glow-btn-secondary,
+  .glow-btn-red {
+    padding: 12px 20px !important;
+    font-size: 0.86rem !important;
+  }
+}
+
+/* Ultra-small screen (< 392px) – tighten everything further */
+@media (max-width: 392px) {
+  html {
+    font-size: 85% !important;
+  }
+
+  .container {
+    padding: 0 10px !important;
+  }
+
+  h2,
+  .section-title,
+  .quote-headline {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word;
+  }
+
+  h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .glow-btn-primary,
+  .glow-btn-secondary,
+  .glow-btn-red,
+  .pill-nav-btn {
+    padding: 8px 12px !important;
+    font-size: 0.72rem !important;
+  }
+}
+
+/* Custom WhatsApp Brand Icon Override to bypass all button and list container overrides */
+svg.custom-wa-icon.monochromatic,
+.glow-btn-primary svg.custom-wa-icon.monochromatic,
+.glow-btn-secondary svg.custom-wa-icon.monochromatic,
+.glow-btn-red svg.custom-wa-icon.monochromatic,
+.info-icon svg.custom-wa-icon.monochromatic,
+.footer-contact-list .icon svg.custom-wa-icon.monochromatic,
+button svg.custom-wa-icon.monochromatic,
+a svg.custom-wa-icon.monochromatic {
+  fill: currentColor !important;
+  stroke: none !important;
+  stroke-width: 0 !important;
+}
+
+svg.custom-wa-icon.monochromatic path,
+.glow-btn-primary svg.custom-wa-icon.monochromatic path,
+.glow-btn-secondary svg.custom-wa-icon.monochromatic path,
+.glow-btn-red svg.custom-wa-icon.monochromatic path,
+.info-icon svg.custom-wa-icon.monochromatic path,
+.footer-contact-list .icon svg.custom-wa-icon.monochromatic path,
+button svg.custom-wa-icon.monochromatic path,
+a svg.custom-wa-icon.monochromatic path {
+  fill: currentColor !important;
+  stroke: none !important;
+  stroke-width: 0 !important;
+}
+
+/* Specifically override green buttons to have black WhatsApp icons and white text */
+.checkout-submit-btn svg.custom-wa-icon.monochromatic,
+.checkout-submit-btn svg.custom-wa-icon.monochromatic path,
+.form-submit-btn svg.custom-wa-icon.monochromatic,
+.form-submit-btn svg.custom-wa-icon.monochromatic path,
+.btn-wa-green svg.custom-wa-icon.monochromatic,
+.btn-wa-green svg.custom-wa-icon.monochromatic path {
+  fill: #000000 !important;
+}
+
+/* Preserve official WhatsApp logo colors even inside buttons or lists */
+svg.custom-wa-icon.official,
+.glow-btn-primary svg.custom-wa-icon.official,
+.glow-btn-secondary svg.custom-wa-icon.official,
+.glow-btn-red svg.custom-wa-icon.official,
+.pill-nav-btn svg.custom-wa-icon.official,
+.info-icon svg.custom-wa-icon.official,
+.footer-contact-list .icon svg.custom-wa-icon.official,
+button svg.custom-wa-icon.official,
+a svg.custom-wa-icon.official {
+  fill: none !important;
+  /* Allow child elements to use their own fill values */
+  stroke: none !important;
+  stroke-width: 0 !important;
+}
+
+svg.custom-wa-icon.official circle,
+.glow-btn-primary svg.custom-wa-icon.official circle,
+.glow-btn-secondary svg.custom-wa-icon.official circle,
+.glow-btn-red svg.custom-wa-icon.official circle,
+.pill-nav-btn svg.custom-wa-icon.official circle,
+.info-icon svg.custom-wa-icon.official circle,
+.footer-contact-list .icon svg.custom-wa-icon.official circle,
+button svg.custom-wa-icon.official circle,
+a svg.custom-wa-icon.official circle {
+  fill: #25D366 !important;
+  stroke: none !important;
+  stroke-width: 0 !important;
+}
+
+svg.custom-wa-icon.official path:nth-of-type(1),
+.glow-btn-primary svg.custom-wa-icon.official path:nth-of-type(1),
+.glow-btn-secondary svg.custom-wa-icon.official path:nth-of-type(1),
+.glow-btn-red svg.custom-wa-icon.official path:nth-of-type(1),
+.pill-nav-btn svg.custom-wa-icon.official path:nth-of-type(1),
+.info-icon svg.custom-wa-icon.official path:nth-of-type(1),
+.footer-contact-list .icon svg.custom-wa-icon.official path:nth-of-type(1),
+button svg.custom-wa-icon.official path:nth-of-type(1),
+a svg.custom-wa-icon.official path:nth-of-type(1) {
+  fill: #ffffff !important;
+  stroke: none !important;
+  stroke-width: 0 !important;
+}
+
+svg.custom-wa-icon.official path:nth-of-type(2),
+.glow-btn-primary svg.custom-wa-icon.official path:nth-of-type(2),
+.glow-btn-secondary svg.custom-wa-icon.official path:nth-of-type(2),
+.glow-btn-red svg.custom-wa-icon.official path:nth-of-type(2),
+.pill-nav-btn svg.custom-wa-icon.official path:nth-of-type(2),
+.info-icon svg.custom-wa-icon.official path:nth-of-type(2),
+.footer-contact-list .icon svg.custom-wa-icon.official path:nth-of-type(2),
+button svg.custom-wa-icon.official path:nth-of-type(2),
+a svg.custom-wa-icon.official path:nth-of-type(2) {
+  fill: #25D366 !important;
+  stroke: none !important;
+  stroke-width: 0 !important;
+}
+
+/* Pill navigation button styling inspired by reference image */
+.pill-nav-btn {
+  font-family: var(--font-body);
+  font-size: 0.76rem !important;
+  font-weight: 800 !important;
+  color: #222222 !important;
+  background: #FFDF00 !important;
+  /* Warm Yellow */
+  border: 1.8px solid #222222 !important;
+  /* Bold Outlined Border */
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  box-shadow: 0 3px 0px #222222 !important;
+  /* Flat organic button shadow */
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 8px !important;
+}
+
+.pill-nav-btn:hover {
+  transform: translateY(-3px) scale(1.04) !important;
+  background: #FF7A00 !important;
+  /* Transitions to orange hover */
+  box-shadow: 0 6px 0px #222222 !important;
+  /* Shadow increases on hover */
+  color: #000000 !important;
+  /* Text changes to black on hover */
+  border-color: #222222 !important;
+}
+
+.pill-nav-btn:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 1px 0px #222222 !important;
+}
+
+/* Active Navigation Pill Highlight */
+.active-pill {
+  background: #FF7A00 !important;
+  /* Orange highlight for active state */
+  color: #000000 !important;
+  box-shadow: 0 4px 0px #222222 !important;
+  transform: translateY(-2px);
+}
+
+/* Special Red Buy Pill Button */
+.buy-btn {
+  background: #E53935 !important;
+  /* Accent red */
+  color: #000000 !important;
+  border-color: #222222 !important;
+}
+
+.buy-btn:hover {
+  background: #FF7A00 !important;
+  /* Accent orange on hover */
+  color: #000000 !important;
+}
+
+/* Green variants of pill-nav-btn */
+.pill-nav-btn.btn-brand-green {
+  background: var(--primary) !important;
+  color: #000000 !important;
+}
+
+.pill-nav-btn.btn-brand-green:hover {
+  background: var(--primary-deep) !important;
+  color: #000000 !important;
+}
+
+.pill-nav-btn.btn-wa-green {
+  background: #25D366 !important;
+  color: #000000 !important;
+}
+
+.pill-nav-btn.btn-wa-green:hover {
+  background: #1ebd5b !important;
+  color: #000000 !important;
+}
+
+/* Overriding global green heading rules to force Hero title to dark green */
+h1.hero-title {
+  color: var(--primary-deep) !important;
+}
