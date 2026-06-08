@@ -813,7 +813,7 @@ button.modal-close:hover {
 }
 
 /* Ultra-small screen (< 395px) – tighten everything further */
-@media (max-width: 350px) {
+@media (max-width: 392px) {
   html {
     font-size: 85% !important;
   }

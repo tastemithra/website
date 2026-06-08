@@ -402,6 +402,32 @@ export const Hero: React.FC = () => {
             gap: 12px !important;
           }
         }
+
+        @media (max-width: 350px) {
+          .hero-section {
+            padding: 110px 0 40px 0 !important;
+          }
+          .hero-title {
+            font-size: 1.55rem !important;
+            line-height: 1.25 !important;
+            margin-bottom: 16px !important;
+          }
+          .hero-description {
+            font-size: 0.85rem !important;
+            margin-bottom: 24px !important;
+            line-height: 1.5 !important;
+          }
+          .hero-actions {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 12px !important;
+          }
+          .hero-actions .pill-nav-btn {
+            width: 100% !important;
+            text-align: center !important;
+            justify-content: center !important;
+          }
+        }
       `}</style>
     </section>
   );

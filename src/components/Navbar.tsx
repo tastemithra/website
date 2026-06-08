@@ -415,6 +415,26 @@ export const Navbar: React.FC = () => {
             margin-top: 10px;
           }
         }
+
+        @media (max-width: 350px) {
+          .navbar-container {
+            padding: 0 10px !important;
+          }
+          .logo-glow-halo .logo-wrapper {
+            width: 42px !important;
+            height: 42px !important;
+          }
+          .brand-title {
+            font-size: 0.88rem !important;
+          }
+          .brand-subtitle {
+            font-size: 0.56rem !important;
+            letter-spacing: 0.08em !important;
+          }
+          .brand-animate-container {
+            gap: 8px !important;
+          }
+        }
       `}</style>
     </>
   );
